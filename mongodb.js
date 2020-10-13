@@ -23,7 +23,7 @@ const id = new ObjectID()
 // console.log(id.id)
 // console.log(id.toHexString().length)
 
-MongoClient.connect(connectionURL, { useNewUrlParser:true, useUnifiedTopology:true }, (error,client)=>{
+MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false }, (error,client)=>{
     if(error){
         return console.log('unable to connect to database')
     }
